@@ -1,0 +1,20 @@
+{
+	"name": "TargetDataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TargetTableName": {
+				"type": "string"
+			},
+			"TargetTableSchema": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

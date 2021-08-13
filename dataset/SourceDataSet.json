@@ -1,0 +1,22 @@
+{
+	"name": "SourceDataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "dbo",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "dummyName",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -300,7 +300,7 @@
 										"source": {
 											"type": "AzureMySqlSource",
 											"query": {
-												"value": "SELECT * FROM [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]",
+												"value": "SELECT * FROM @{item().TABLE_SCHEMA}.@{item().TABLE_NAME}",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00"

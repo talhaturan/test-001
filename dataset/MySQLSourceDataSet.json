@@ -1,0 +1,14 @@
+{
+	"name": "MySQLSourceDataSet",
+	"properties": {
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "dummyname",
+				"type": "Expression"
+			}
+		}
+	}
+}

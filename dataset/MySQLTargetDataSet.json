@@ -1,0 +1,22 @@
+{
+	"name": "MySQLTargetDataSet",
+	"properties": {
+		"parameters": {
+			"TargetTableName": {
+				"type": "string"
+			},
+			"TargetTableSchema": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@concat(dataset().TargetTableSchema, '.', dataset().TargetTableName)",
+				"type": "Expression"
+			}
+		}
+	}
+}

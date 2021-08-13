@@ -1,0 +1,84 @@
+{
+	"name": "IterateAndCopySQLTables_MySQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "IterateSQLTables_MySQL",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.tableList",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1 MySQL",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureMySqlSource",
+									"query": {
+										"value": "SELECT * FROM [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]",
+										"type": "Expression"
+									},
+									"queryTimeout": "02:00:00"
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"preCopyScript": {
+										"value": "IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]')) TRUNCATE TABLE [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]",
+										"type": "Expression"
+									},
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "MySQLSourceDataSet",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "TargetDataSet",
+									"type": "DatasetReference",
+									"parameters": {
+										"TargetTableName": "@item().TABLE_NAME",
+										"TargetTableSchema": "@item().TABLE_SCHEMA"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"tableList": {
+				"type": "array"
+			}
+		},
+		"annotations": []
+	}
+}

@@ -1,6 +1,10 @@
 {
 	"name": "MySQLSourceDataSet",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMySql1",
+			"type": "LinkedServiceReference"
+		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
 		"schema": [],

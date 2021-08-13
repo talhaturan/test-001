@@ -37,7 +37,7 @@
 								"sink": {
 									"type": "AzureSqlSink",
 									"preCopyScript": {
-										"value": "IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]')) TRUNCATE TABLE [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]",
+										"value": "DROP TABLE IF EXISTS @{item().TABLE_SCHEMA}.@{item().TABLE_NAME}",
 										"type": "Expression"
 									},
 									"tableOption": "autoCreate",
@@ -77,6 +77,11 @@
 		"parameters": {
 			"tableList": {
 				"type": "array"
+			}
+		},
+		"variables": {
+			"tableList": {
+				"type": "Array"
 			}
 		},
 		"annotations": []

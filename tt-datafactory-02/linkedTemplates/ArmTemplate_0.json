@@ -352,13 +352,13 @@
 											"queryTimeout": "02:00:00"
 										},
 										"sink": {
-											"type": "AzureSqlSink",
+											"type": "AzureMySqlSink",
+											"writeBatchSize": 10000,
+											"writeBatchTimeout": "00:00:30",
 											"preCopyScript": {
 												"value": "DROP TABLE IF EXISTS @{item().TABLE_SCHEMA}.@{item().TABLE_NAME}",
 												"type": "Expression"
-											},
-											"tableOption": "autoCreate",
-											"disableMetricsCollection": false
+											}
 										},
 										"enableStaging": false,
 										"translator": {
@@ -379,7 +379,7 @@
 									],
 									"outputs": [
 										{
-											"referenceName": "TargetDataSet",
+											"referenceName": "MySQLTargetDataSet",
 											"type": "DatasetReference",
 											"parameters": {
 												"TargetTableName": "@item().TABLE_NAME",
@@ -406,7 +406,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/MySQLSourceDataSet')]",
-				"[concat(variables('factoryId'), '/datasets/TargetDataSet')]"
+				"[concat(variables('factoryId'), '/datasets/MySQLTargetDataSet')]"
 			]
 		},
 		{

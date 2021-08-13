@@ -2,7 +2,7 @@
 	"name": "MySQLTargetDataSet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureMySql2",
+			"referenceName": "AzureMySql3",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {

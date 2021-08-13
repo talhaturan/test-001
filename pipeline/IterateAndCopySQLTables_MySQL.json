@@ -39,7 +39,7 @@
 									"writeBatchSize": 10000,
 									"writeBatchTimeout": "00:00:30",
 									"preCopyScript": {
-										"value": "DROP TABLE IF EXISTS @{item().TABLE_SCHEMA}.@{item().TABLE_NAME}",
+										"value": "TRUNCATE TABLE @{item().TABLE_SCHEMA}.@{item().TABLE_NAME}",
 										"type": "Expression"
 									}
 								},

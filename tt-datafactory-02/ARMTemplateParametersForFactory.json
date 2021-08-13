@@ -8,6 +8,12 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"AzureMySql1_connectionString": {
+			"value": ""
+		},
+		"AzureMySql2_connectionString": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},

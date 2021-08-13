@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureMySql2'"
 		},
+		"AzureMySql3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureMySql3'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
@@ -66,6 +70,9 @@
 					},
 					"AzureMySql2_connectionString": {
 						"value": "[parameters('AzureMySql2_connectionString')]"
+					},
+					"AzureMySql3_connectionString": {
+						"value": "[parameters('AzureMySql3_connectionString')]"
 					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"

@@ -79,11 +79,6 @@
 				"type": "array"
 			}
 		},
-		"variables": {
-			"tableList": {
-				"type": "Array"
-			}
-		},
 		"annotations": []
 	}
 }

@@ -1,0 +1,9 @@
+{
+	"name": "tt-datafactory-temp-01",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7b158641-6e02-4425-8318-d05bc45e16cd",
+		"tenantId": "1e1aa76b-4b02-45f4-9417-2e13eb0da973"
+	}
+}

@@ -17,8 +17,8 @@
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dataset().p_table_schema",
-			"table": "dataset().p_table_name"
+			"schema": "dbo",
+			"table": "dummytable"
 		}
 	}
 }

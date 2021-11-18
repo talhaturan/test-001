@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"p_tabla_schema": {
+			"p_table_schema": {
 				"type": "string"
 			},
 			"p_table_name": {

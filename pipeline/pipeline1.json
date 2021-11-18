@@ -57,7 +57,7 @@
 						"referenceName": "AzureSynapseAnalyticsTable1",
 						"type": "DatasetReference",
 						"parameters": {
-							"p_tabla_schema": "dbo",
+							"p_table_schema": "dbo",
 							"p_table_name": "DENEME"
 						}
 					}

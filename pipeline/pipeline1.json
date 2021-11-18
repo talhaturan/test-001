@@ -26,6 +26,10 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
+					"sink": {
+						"type": "SqlDWSink",
+						"allowCopyCommand": true
+					},
 					"enableStaging": false
 				},
 				"inputs": [
@@ -35,6 +39,16 @@
 						"parameters": {
 							"p_file_name": "deneme.csv",
 							"p_folder_name": "@string(formatDateTime(utcnow(), 'yyyyMMdd'))"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSynapseAnalyticsTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"p_tabla_schema": "dbo",
+							"p_table_name": "DENEME"
 						}
 					}
 				]

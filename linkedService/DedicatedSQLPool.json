@@ -1,0 +1,12 @@
+{
+	"name": "DedicatedSQLPool",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=tt-sqlsrv-001.database.windows.net;initial catalog=tt-sql-pool-001;user id=ttadmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEZGQjQwNDIxLTI5QzUtNDg1MS1CQkExLTQ2N0I0MUNEM0JEQ183M2RiOGQ5NS02ZGQ5LTQ5OGItYjRmMS1jMGI1Y2U1NTJkNjAiDQp9"
+		}
+	}
+}
